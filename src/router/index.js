@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 
 export default Router;
 
-function Router(route) {
+function Router() {
 	const router = new VueRouter({
 		routes: [{
 			name: 'home',
@@ -22,6 +22,12 @@ function Router(route) {
 					name: 'login',
 					path: '/login',
 					component: load('Login'),
+					meta: { requiresAuth: true }
+				},
+				{
+					name: 'index',
+					path: '/index',
+					component: load('Index'),
 					meta: { requiresAuth: true }
 				}
 			]
